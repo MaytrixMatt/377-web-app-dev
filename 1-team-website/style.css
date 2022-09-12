@@ -5,23 +5,29 @@
     --lightgreen:#0ca40a;
     --midgreen:#077a05;
     --darkgreen:#1b5b10;
+    --hawk1:#324480;
+    --hawk2:#3670a3;
+    --hawk3:#192352;
+    --lightyellow:#eded24;
+    --midyellow:#c2c22f;
+    --darkyellow:#8f8f1d;
 }
 a{
     text-decoration:none;
 }
 h1{
     font-family:times;
-    color:var(--sox1);
+    color:var(--hawk1);
     font-size:60px;
     text-align:center;
 }
 h3{
     font-size:20px;
-    color:var(--midgreen);
+    color:var(--midyellow);
 }
 .button{
     padding:5px 12px 5px 12px;
-    background-color:var(--sox2);
+    background-color:var(--hawk2);
     border-radius: 15px;
 }
 #link{
@@ -33,13 +39,13 @@ h3{
     font-style:italic;
 }
 th{
-    background-color:var(--darkgreen);
+    background-color:var(--darkyellow);
 }
 .odd-table-rows{
-    background-color:var(--lightgreen);
+    background-color:var(--lightyellow);
 }
 .even-table-rows{
-    background-color:var(--midgreen);
+    background-color:var(--midyellow);
 }
 .center-container{
     margin-left:auto;
@@ -53,7 +59,7 @@ th{
     text-align:center;
 }
 body{
-    background-color:var(--sox3);
+    background-color:var(--hawk3);
 }
 table, td, th, tr {
     padding: 5px 10px 5px 10px;
