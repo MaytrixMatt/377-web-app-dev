@@ -2,11 +2,50 @@
 <html lang="en">
     <head>
         <title>Your Page Title</title>
+        <style>
+            input{
+                color:darkred;
+            }
+        </style>
+
+        <script>
+            function helloWorld(){
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+
+                var response = "Hello " + username + ", your password is " + password;
+
+                // This is annoying
+                //alert(response);
+
+                document.getElementById("greeting").innerHTML += "<br>" + response;
+
+            }
+        </script>
+
     </head>
 
     <body>
-        <h1>Hello! My Name is Matt Collins and this is WAD</h1>
+        <p>Hello! My Name is Matt Collins and this is WAD</p>
         <ul>Web Application Development</ul>
+
+        <br>
+
+        <h3>My First Form</h3>   
         
+        <form>
+            Username
+            <br>
+            <input type="text" placeholder="Username" size="30" id="username">
+            <br>
+            Password
+            <br>
+            <input type="text" placeholder="Password" size="30" id="password">
+            <br><br>
+            <input type="button" value="Virus" onclick="helloWorld()">
+        </form>
+
+        <h2 id="greeting"></h2>
+
     </body>
 </html>

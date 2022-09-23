@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Lesson 1</title>
+
+        <script src="lesson-9.js"></script>
+        <script>
+
+            window.onload = function(){
+
+            var carObject1 = makeCar('BMW ', 'M3 ', 23, ' White' );
+            var carObject2 = makeCar('Mazda ', 'CX-9 ', 25, ' Blue' );
+            var carObject3 = makeCar('Honda ', 'Pilot ', 19, ' Black' );
+
+            var cars = [ carObject1, carObject2, carObject3 ];
+
+            var html ='';
+
+            for(var i = 0; i < cars.length; i++){
+                html += '<li>' + cars[i].make + ' ' + cars[i].model +' (' + cars[i].mpg + ' mpg) </li>';
+            }
+
+            document.getElementById('cars').innerHTML = html;
+            }
+        </script>
+        
+    </head>
+
+    <body>
+        <h1>JavaScript Lesson 9-10</h1>
+        <ul id="cars"></ul>
+    </body>
+</html>

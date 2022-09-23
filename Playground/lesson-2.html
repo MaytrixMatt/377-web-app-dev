@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Lesson 2</title>
+
+        <script>
+
+        var prev = (new Date()).getTime();
+
+        function run() {
+            // var x = 5;
+            // var y = 3;
+            // var z = x + y;
+
+            // console.log("The value of z is " + z);
+
+            // Get the current time
+            var now = (new Date()).getTime();
+
+            // Compare it to the last click time
+            var diff = 0.01 *(now - prev); // converted to mks
+
+            // Display the difference
+            console.log(diff);
+
+            // Remember "now" for later
+            prev = now;
+        }
+
+        </script>
+    </head>
+
+    <body>
+
+        <h1>JavaScript Lesson 2</h1>
+
+        <p>The focus of this lesson is <b>variables</b> and <b>operators</b>.</p>
+
+        <button type="button" onclick="run()">
+            Click to write output to the console.
+        </button>
+
+    </body>
+</html>
