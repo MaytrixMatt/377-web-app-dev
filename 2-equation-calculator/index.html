@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <script src="scripts.js"></script>
+         <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+
+        <h1>Basic Functions</h1>
+
+        <form>
+            Value 1: <input type="text" id="value1" name="value1" />
+            <br>
+            Value 2: <input type="text" id="value2" name="value2" />
+            <br>
+            <button type="button" onclick="add()">+</button>
+            <button type="button" onclick="subtract()">-</button>
+            <button type="button" onclick="multiply()">*</button>
+            <button type="button" onclick="divide()">/</button>
+            <button type="button" onclick="square()">^2</button>
+            <button type="button" onclick="squareRoot()">^1/2</button>
+            <br>
+            <input type="radio" id="yes" name="terms" value="I agree to the terms of service">
+            <label for="html">I agree to the terms of service</label><br>
+            <input type="radio" id="no" name="terms" value="I do not agree to the terms of service">
+            <label for="css">I do not agree to the terms of service</label><br>
+        </form>
+
+        Result: <span id="result"></span>
+        
+        <h1>Algebraic Functions</h1>
+
+        <form>
+            Value 1: <input type="text" id="value1" name="value1" />
+            <br>
+            Value 2: <input type="text" id="value2" name="value2" />
+            <br>
+            <button type="button" onclick="mean()">mean</button>
+            <button type="button" onclick="median()">median</button>
+            <button type="button" onclick="mode()">mode</button>
+            <button type="button" onclick="range()">range</button>
+            <br>
+            <input type="radio" id="yes" name="terms" value="I agree to the terms of service">
+            <label for="html">I agree to the terms of service</label><br>
+            <input type="radio" id="no" name="terms" value="I do not agree to the terms of service">
+            <label for="css">I do not agree to the terms of service</label><br>
+        </form>
+
+        Result: <span id="result"></span>
+
+
+    </body>
+</html>
