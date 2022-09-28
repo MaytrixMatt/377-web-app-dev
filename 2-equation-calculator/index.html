@@ -28,14 +28,15 @@
             <label for="css">I do not agree to the terms of service</label><br>
         </form>
 
-        Result: <span id="result"></span>
+        Result: <span id="basicresult"></span>
         
         <h1>Algebraic Functions</h1>
 
         <form>
-            Value 1: <input type="text" id="value1" name="value1" />
+            <input type="text" id="value" name="value" />
+            <button type="button" onclick="addToList()">append</button>
             <br>
-            Value 2: <input type="text" id="value2" name="value2" />
+            Value(s): <span id="list"></span>
             <br>
             <button type="button" onclick="mean()">mean</button>
             <button type="button" onclick="median()">median</button>
@@ -48,7 +49,25 @@
             <label for="css">I do not agree to the terms of service</label><br>
         </form>
 
-        Result: <span id="result"></span>
+        Result: <span id="algebraicresult"></span>
+
+        <h1>Pythagorean Theorem</h1>
+
+        <form>
+            Value of <span class = "italy">a</span>: <input type="text" id="a" name="a" />
+            <br>
+            Value of <span class = "italy">b</span>: <input type="text" id="b" name="b" />
+            <br>
+            <br>
+            <button type="button" onclick="pythagoreanTheorem()">Pythagorean Theorem</button>
+            <br>
+            <input type="radio" id="yes" name="terms" value="I agree to the terms of service">
+            <label for="html">I agree to the terms of service</label><br>
+            <input type="radio" id="no" name="terms" value="I do not agree to the terms of service">
+            <label for="css">I do not agree to the terms of service</label><br>
+        </form>
+
+        Result: <span id="pythresult"></span>
 
 
     </body>
