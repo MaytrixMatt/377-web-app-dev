@@ -39,7 +39,6 @@ function pythagoreanTheorem() {
     var result = Math.sqrt((a*a) + (b*b));
     document.getElementById("pythresult").innerHTML = result;
 }
-
 function mean(){
     var sum = 0;
     for(var i = 0; i < numbers.length; i++){
@@ -48,18 +47,22 @@ function mean(){
     var result = sum/numbers.length;
     document.getElementById("algebraicresult").innerHTML = result;
 }
-
-function addToList(){
-    var number = (parseInt(document.getElementById("value").value));
-    document.getElementById("value").value = "";
-    numbers.push(number);
-    document.getElementById("list").innerHTML += number + ", ";
-}
-
 function median(){
     var numssorted = numbers.sort();
     var position = Math.floor(numbers.length / 2)
     var result = numssorted[position];
     document.getElementById("algebraicresult").innerHTML = result;
 }
-
+function range(){
+    var numssorted = numbers.sort();
+    var numeroGrande = numssorted[numbers.length - 1];
+    var numeroPequeno = numssorted[0];
+    var result = numeroGrande - numeroPequeno;
+    document.getElementById("algebraicresult").innerHTML = result;
+}
+function addToList(){
+    var number = (parseInt(document.getElementById("value").value));
+    document.getElementById("value").value = "";
+    numbers.push(number);
+    document.getElementById("list").innerHTML += number + ", ";
+}
