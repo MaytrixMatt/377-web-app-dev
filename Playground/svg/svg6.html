@@ -40,7 +40,7 @@
               }
             }
 
-            function elementClicked(evt, switchNumber) {
+            function elementClicked(switchNumber) {
               console.log(switchNumber);
               toggleThatSwitch(switchNumber);
 
@@ -247,12 +247,12 @@
           <use id="sw-off-5" href="#sw-off" x="184" y="448" visibility="visible"/>
           <use id="sw-on-5" href="#sw-on" x="184" y="452" visibility="hidden"/>
 
-          <rect class="clickable" onclick="elementClicked(evt,0)" stroke="none" fill="#999999" fill-opacity="0" x="170" y="180" width="30" height="40" />
-          <rect class="clickable" onclick="elementClicked(evt,1)" stroke="none" fill="#999999" fill-opacity="0" x="170" y="230" width="30" height="40" />
-          <rect class="clickable" onclick="elementClicked(evt,2)" stroke="none" fill="#999999" fill-opacity="0" x="170" y="280" width="30" height="40" />
-          <rect class="clickable" onclick="elementClicked(evt,3)" stroke="none" fill="#999999" fill-opacity="0" x="170" y="330" width="30" height="40" />
-          <rect class="clickable" onclick="elementClicked(evt,4)" stroke="none" fill="#999999" fill-opacity="0" x="170" y="380" width="30" height="40" />
-          <rect class="clickable" onclick="elementClicked(evt,5)" stroke="none" fill="#999999" fill-opacity="0" x="170" y="430" width="30" height="40" />
+          <rect class="clickable" onclick="elementClicked(0)" stroke="none" fill="#999999" fill-opacity="0" x="170" y="180" width="30" height="40" />
+          <rect class="clickable" onclick="elementClicked(1)" stroke="none" fill="#999999" fill-opacity="0" x="170" y="230" width="30" height="40" />
+          <rect class="clickable" onclick="elementClicked(2)" stroke="none" fill="#999999" fill-opacity="0" x="170" y="280" width="30" height="40" />
+          <rect class="clickable" onclick="elementClicked(3)" stroke="none" fill="#999999" fill-opacity="0" x="170" y="330" width="30" height="40" />
+          <rect class="clickable" onclick="elementClicked(4)" stroke="none" fill="#999999" fill-opacity="0" x="170" y="380" width="30" height="40" />
+          <rect class="clickable" onclick="elementClicked(5)" stroke="none" fill="#999999" fill-opacity="0" x="170" y="430" width="30" height="40" />
 
           <!-- Right Side Wires -->
           <line stroke="#d3d3d3" stroke-width="10" x1="530" y1="225" x2="590" y2="225" />
