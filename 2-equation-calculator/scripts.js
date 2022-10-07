@@ -65,4 +65,5 @@ function addToList(){
     document.getElementById("value").value = "";
     numbers.push(number);
     document.getElementById("list").innerHTML += number + ", ";
+
 }
