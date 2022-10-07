@@ -10,6 +10,23 @@
                 cursor:pointer;
             }
 
+            h1{
+                animation: color-change 5s infinite;
+                text-shadow: 1px 1px black
+                }
+            
+            @keyframes color-change {
+                0% { color: red; }
+                16% {color: orange}
+                32% {color: yellow}
+                48% {color: green}
+                64% {color: blue}
+                80% {color: fuchsia}
+                100% {color: purple}
+            }
+
+            
+
         </style>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -18,45 +35,45 @@
 
             function rollDice(){
 
-                var ident = "b";
+                var ident = "a";
                 
                 $(".dot").css("visibility", "hidden");
 
-                for(var i = 0; i < 1; i++){
+                for(var i = 0; i < 2; i++){
                 
-                    if(i == 0){
-                        ident = "a"
+                    if(i == 1){
+                        ident = "b"
                     }
 
                     var selecdie = Math.floor(Math.random() * 6 + 1);
                     
                     if (selecdie == 1){
-                        $("#" + 4 + ident).css("visibility", "visible");
+                        $("#" + 7 + ident).css("visibility", "visible");
                     }else if (selecdie == 2){
                         $("#" + 1 + ident).css("visibility", "visible");
-                        $("#" + 7 + ident).css("visibility", "visible");
+                        $("#" + 6 + ident).css("visibility", "visible");
                     }else if (selecdie == 3){
                         $("#" + 1 + ident).css("visibility", "visible");
-                        $("#" + 4 + ident).css("visibility", "visible");
+                        $("#" + 6 + ident).css("visibility", "visible");
                         $("#" + 7 + ident).css("visibility", "visible");
                     }else if (selecdie == 4){
                         $("#" + 1 + ident).css("visibility", "visible");
                         $("#" + 3 + ident).css("visibility", "visible");
-                        $("#" + 5 + ident).css("visibility", "visible");
-                        $("#" + 7 + ident).css("visibility", "visible");
+                        $("#" + 4 + ident).css("visibility", "visible");
+                        $("#" + 6 + ident).css("visibility", "visible");
                     }else if (selecdie == 5){
                         $("#" + 1 + ident).css("visibility", "visible");
                         $("#" + 3 + ident).css("visibility", "visible");
                         $("#" + 4 + ident).css("visibility", "visible");
-                        $("#" + 5 + ident).css("visibility", "visible");
+                        $("#" + 6 + ident).css("visibility", "visible");
                         $("#" + 7 + ident).css("visibility", "visible");
                     }else{
                         $("#" + 1 + ident).css("visibility", "visible");
                         $("#" + 2 + ident).css("visibility", "visible");
                         $("#" + 3 + ident).css("visibility", "visible");
+                        $("#" + 4 + ident).css("visibility", "visible");
                         $("#" + 5 + ident).css("visibility", "visible");
                         $("#" + 6 + ident).css("visibility", "visible");
-                        $("#" + 7 + ident).css("visibility", "visible");
                     }
                 }   
             }
