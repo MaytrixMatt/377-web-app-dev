@@ -34,18 +34,23 @@
         <script>
 
             function rollDice(){
-
+                var dieuno;
+                var diedos;
                 var ident = "a";
                 
                 $(".dot").css("visibility", "hidden");
 
                 for(var i = 0; i < 2; i++){
-                
+                    
+                    var selecdie = Math.floor(Math.random() * 6 + 1);
+
                     if(i == 1){
                         ident = "b"
+                        diedos = selecdie;
+                    }else{
+                        dieuno = selecdie;
                     }
 
-                    var selecdie = Math.floor(Math.random() * 6 + 1);
                     
                     if (selecdie == 1){
                         $("#" + 7 + ident).css("visibility", "visible");
@@ -76,6 +81,8 @@
                         $("#" + 6 + ident).css("visibility", "visible");
                     }
                 }   
+
+                $("#dicesum").innerHTML = (dieuno + diedos);
             }
 
         </script>
@@ -111,8 +118,11 @@
 
                 <text x="225" y="348">El Roll</text>
 
-                <rect stroke="#ffffff" fill="#202020" x="225" y="350" width="60" height="40"/>
-                <rect class="clickable" onclick="rollDice()" stroke="none" fill="#999999" fill-opacity="0" x="225" y="350" width="60" height="40" />
+                <text id="dicesum" x="225" y="280"></text>
+
+
+                <rect stroke="#ffffff" fill="#202020" x="220" y="350" width="60" height="40"/>
+                <rect class="clickable" onclick="rollDice()" stroke="none" fill="#999999" fill-opacity="0" x="220" y="350" width="60" height="40" />
 
             </svg>
         </div>
