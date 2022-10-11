@@ -14,6 +14,11 @@
                 animation: color-change 5s infinite;
                 text-shadow: 1px 1px black
                 }
+
+            .numero{
+                font-weight:bolder;
+                font-size:larger;
+            }
             
             @keyframes color-change {
                 0% { color: red; }
@@ -32,13 +37,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
         <script>
-
+            var point = 0;
             function rollDice(){
                 var dieuno;
                 var diedos;
                 var ident = "a";
                 
                 $(".dot").css("visibility", "hidden");
+                $("#gamestatus").html("");
 
                 for(var i = 0; i < 2; i++){
                     
@@ -82,8 +88,24 @@
                     }
                 }   
 
-                $("#dicesum").innerHTML = (dieuno + diedos);
+                var elSum = dieuno + diedos;
+
+                $("#dicesum").html(elSum);
+                if(point == 0){
+                    if(elSum == 7 || elSum == 11){
+                        $("#gamestatus").html("Win");
+                    }else if(elSum == 2 || elSum == 3 || elSum == 12){
+                        $("#gamestatus").html("Lose");
+                    }else{
+                        point = elSum;
+                    }
+                {
+                    
+                }
+                
             }
+
+           
 
         </script>
 
@@ -116,10 +138,11 @@
                 <circle id="6b" class="dot" stroke="#000000" cx="380" cy="230" r="6" />
                 <circle id="7b" class="dot" stroke="#000000" cx="350" cy="200" r="6" />
 
-                <text x="225" y="348">El Roll</text>
+                <text x="225" y="348" >El Roll</text>
 
-                <text id="dicesum" x="225" y="280"></text>
-
+                <text id="dicesum" class="numero" x="240" y="280"></text>
+                <text id="gamestatus"  x="440" y="480"></text>
+                
 
                 <rect stroke="#ffffff" fill="#202020" x="220" y="350" width="60" height="40"/>
                 <rect class="clickable" onclick="rollDice()" stroke="none" fill="#999999" fill-opacity="0" x="220" y="350" width="60" height="40" />
