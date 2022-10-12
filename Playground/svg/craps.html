@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<DOCTYPE html>
+<html lang="en">
     <head>
         <title>Craps Dice Game</title>
 
@@ -38,6 +38,13 @@
 
         <script>
             var point = 0;
+
+            $(document).ready(function () {
+                $("#7b").css("visibility", "hidden");
+                $("#7a").css("visibility", "hidden");
+            });
+            
+
             function rollDice(){
                 var dieuno;
                 var diedos;
@@ -99,13 +106,18 @@
                     }else{
                         point = elSum;
                     }
-                {
-                    
+                }else{
+                    if(point == elSum){
+                        $("#gamestatus").html("Win");
+                        point = 0;
+                    }else if(elSum == 7){
+                        $("#gamestatus").html("Lose");
+                        point = 0;
+                    }
                 }
                 
             }
 
-           
 
         </script>
 
@@ -141,7 +153,9 @@
                 <text x="225" y="348" >El Roll</text>
 
                 <text id="dicesum" class="numero" x="240" y="280"></text>
-                <text id="gamestatus"  x="440" y="480"></text>
+                <text id="gamestatus" x="440" y="480"></text>
+
+                <text id="bank" x="10" y="480">Chips: 250</text>
                 
 
                 <rect stroke="#ffffff" fill="#202020" x="220" y="350" width="60" height="40"/>
