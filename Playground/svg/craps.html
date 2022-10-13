@@ -19,6 +19,15 @@
                 font-weight:bolder;
                 font-size:larger;
             }
+
+
+            svg{
+                background-color:greenFelt;
+            }
+
+            :root{
+                --greenFelt:rgb(26, 100, 26);
+            }
             
             @keyframes color-change {
                 0% { color: red; }
@@ -37,6 +46,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
         <script>
+            var lifeSavings = 100;
             var point = 0;
 
             $(document).ready(function () {
@@ -45,11 +55,24 @@
             });
             
 
+            function calcuclateDeviationOfLifeSavings(bet,at){
+                if(at){
+                    lifeSavings += bet
+                }else{
+                    lifeSavings
+                }
+            }
+            
             function rollDice(){
+                var at;
                 var dieuno;
                 var diedos;
                 var ident = "a";
-                
+                if (point == 0){
+                    var bet = prompt("Place your bets");
+                }
+
+
                 $(".dot").css("visibility", "hidden");
                 $("#gamestatus").html("");
 
@@ -101,22 +124,30 @@
                 if(point == 0){
                     if(elSum == 7 || elSum == 11){
                         $("#gamestatus").html("Win");
+                        at = true;
                     }else if(elSum == 2 || elSum == 3 || elSum == 12){
                         $("#gamestatus").html("Lose");
+                        at = false;
                     }else{
                         point = elSum;
                     }
                 }else{
                     if(point == elSum){
                         $("#gamestatus").html("Win");
+                        at = true;
                         point = 0;
                     }else if(elSum == 7){
                         $("#gamestatus").html("Lose");
                         point = 0;
+                        at = false
                     }
                 }
-                
+                if(at !== null){
+                    calcuclateDeviationOfLifeSavings(bet,at);
+                }
             }
+
+            
 
 
         </script>
@@ -155,7 +186,8 @@
                 <text id="dicesum" class="numero" x="240" y="280"></text>
                 <text id="gamestatus" x="440" y="480"></text>
 
-                <text id="bank" x="10" y="480">Chips: 250</text>
+                <text x="10" y="480">Chips:</text>
+                <text id="LifeSavings" x="52" y="480">100</text>
                 
 
                 <rect stroke="#ffffff" fill="#202020" x="220" y="350" width="60" height="40"/>
@@ -163,5 +195,26 @@
 
             </svg>
         </div>
+        Rules:
+        <br />
+        1. 
+        <br />
+            a. If roll is 7 or 11 you Win
+            <br />
+            b. If roll is 2, 3, or 12 you Lose
+            <br />
+            c. If conditions a & b are not met, continue to step 2.
+            <br />
+        2. Remember the roll
+        <br />
+        3.
+        <br />
+            a. Re-Roll
+            <br />
+            b. If the new roll is equal to the original roll you win
+            <br />
+            c. If the roll is equal to 7 you Lose
+            <br />
+            d If conditions in b & c are not met repeat step 3
     </body>
  </html>
