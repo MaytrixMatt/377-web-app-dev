@@ -3,7 +3,6 @@
     <head>
         <title>Craps Dice Game</title>
 
-        
 
         <style>
             .clickable{
@@ -22,13 +21,10 @@
 
 
             svg{
-                background-color:greenFelt;
-            }
-
-            :root{
-                --greenFelt:rgb(26, 100, 26);
+                background-color:rgb(26, 100, 26);
             }
             
+
             @keyframes color-change {
                 0% { color: red; }
                 16% {color: orange}
@@ -48,6 +44,7 @@
         <script>
             var lifeSavings = 100;
             var point = 0;
+            var bet = 0;
 
             $(document).ready(function () {
                 $("#7b").css("visibility", "hidden");
@@ -57,10 +54,12 @@
 
             function calcuclateDeviationOfLifeSavings(bet,at){
                 if(at){
-                    lifeSavings += bet
+                    lifeSavings += bet;
                 }else{
-                    lifeSavings
+                    lifeSavings -= bet;
                 }
+
+                $("#LifeSavings").html(lifeSavings);
             }
             
             function rollDice(){
@@ -68,8 +67,10 @@
                 var dieuno;
                 var diedos;
                 var ident = "a";
-                if (point == 0){
-                    var bet = prompt("Place your bets");
+
+                bet = 0;
+                while (point == 0 && (bet > lifeSavings || bet <= 4.9)){
+                    bet = parseInt(prompt("Place your bets"));
                 }
 
 
@@ -120,7 +121,7 @@
 
                 var elSum = dieuno + diedos;
 
-                $("#dicesum").html(elSum);
+               
                 if(point == 0){
                     if(elSum == 7 || elSum == 11){
                         $("#gamestatus").html("Win");
@@ -130,6 +131,7 @@
                         at = false;
                     }else{
                         point = elSum;
+                        $("#savedroll").html(point);
                     }
                 }else{
                     if(point == elSum){
@@ -138,11 +140,11 @@
                         point = 0;
                     }else if(elSum == 7){
                         $("#gamestatus").html("Lose");
+                        at = false;
                         point = 0;
-                        at = false
                     }
                 }
-                if(at !== null){
+                if(point == 0){
                     calcuclateDeviationOfLifeSavings(bet,at);
                 }
             }
@@ -183,7 +185,7 @@
 
                 <text x="225" y="348" >El Roll</text>
 
-                <text id="dicesum" class="numero" x="240" y="280"></text>
+                <text id="savedroll" class="numero" x="240" y="280"></text>
                 <text id="gamestatus" x="440" y="480"></text>
 
                 <text x="10" y="480">Chips:</text>
