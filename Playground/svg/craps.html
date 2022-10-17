@@ -52,13 +52,13 @@
             });
             
 
-            function calcuclateDeviationOfLifeSavings(bet,at){
-                if(at){
+            function calcuclateDeviationOfLifeSavings(bet,win){
+                if(win){
                     lifeSavings += bet;
                 }else{
                     lifeSavings -= bet;
                 }
-
+                console.log(bet);
                 $("#LifeSavings").html(lifeSavings);
             }
             
@@ -68,8 +68,8 @@
                 var diedos;
                 var ident = "a";
 
-                bet = 0;
                 while (point == 0 && (bet > lifeSavings || bet <= 4.9)){
+                    bet = 0
                     bet = parseInt(prompt("Place your bets"));
                 }
 
@@ -125,10 +125,10 @@
                 if(point == 0){
                     if(elSum == 7 || elSum == 11){
                         $("#gamestatus").html("Win");
-                        at = true;
+                        calcuclateDeviationOfLifeSavings(bet,true);
                     }else if(elSum == 2 || elSum == 3 || elSum == 12){
                         $("#gamestatus").html("Lose");
-                        at = false;
+                        calcuclateDeviationOfLifeSavings(bet,false);
                     }else{
                         point = elSum;
                         $("#savedroll").html(point);
@@ -136,17 +136,15 @@
                 }else{
                     if(point == elSum){
                         $("#gamestatus").html("Win");
-                        at = true;
+                        calcuclateDeviationOfLifeSavings(bet,true);
                         point = 0;
                     }else if(elSum == 7){
                         $("#gamestatus").html("Lose");
-                        at = false;
+                        calcuclateDeviationOfLifeSavings(bet,false);
                         point = 0;
                     }
                 }
-                if(point == 0){
-                    calcuclateDeviationOfLifeSavings(bet,at);
-                }
+
             }
 
             
