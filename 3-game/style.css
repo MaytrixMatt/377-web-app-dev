@@ -1,0 +1,25 @@
+h1{
+    animation: color-change 5s infinite;
+    text-shadow: 1px 1px black
+    }
+
+.numero{
+    font-weight:bolder;
+    font-size:larger;
+}
+
+
+svg{
+    background-color:rgb(26, 100, 26);
+}
+
+
+@keyframes color-change {
+    0% { color: red; }
+    16% {color: orange}
+    32% {color: yellow}
+    48% {color: green}
+    64% {color: blue}
+    80% {color: fuchsia}
+    100% {color: purple}
+}

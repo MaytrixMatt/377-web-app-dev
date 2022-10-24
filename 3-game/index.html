@@ -1,0 +1,84 @@
+<DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>Blackjack</title>
+    
+            <link rel="stylesheet" type="text/css" href="style.css">
+    
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+            <script src="scripts.js"></script>
+    
+        </head>
+    
+        <body>
+    
+            <h1>Blackjack</h1>
+            <div style="border: solid black 1px; width: 1000px;">
+    
+                <svg width="1000" height="500">
+    
+                    <!--Card Numero Uno-->
+                    <rect stroke="#000000" fill="#ffffff" x="200" y="150" width="150" height="300"/>
+                    <circle id="1a" class="dot" stroke="#000000" cx="240" cy="200" r="10" />
+                    <circle id="2a" class="dot" stroke="#000000" cx="240" cy="250" r="10" />
+                    <circle id="3a" class="dot" stroke="#000000" cx="240" cy="300" r="10" />
+                    <circle id="4a" class="dot" stroke="#000000" cx="240" cy="350" r="10" />
+                    <circle id="5a" class="dot" stroke="#000000" cx="240" cy="400" r="10" />
+                    <circle id="6a" class="dot" stroke="#000000" cx="300" cy="200" r="10" />
+                    <circle id="7a" class="dot" stroke="#000000" cx="300" cy="250" r="10" />
+                    <circle id="8a" class="dot" stroke="#000000" cx="300" cy="300" r="10" />
+                    <circle id="9a" class="dot" stroke="#000000" cx="300" cy="350" r="10" />
+                    <circle id="10a" class="dot" stroke="#000000" cx="300" cy="400" r="10" />
+    
+    
+                    <!--Card Numero Dos-->
+                    <rect stroke="#000000" fill="#ffffff" x="600" y="150" width="150" height="300"/>
+                    <circle id="1b" class="dot" stroke="#000000" cx="640" cy="200" r="10" />
+                    <circle id="2b" class="dot" stroke="#000000" cx="640" cy="250" r="10" />
+                    <circle id="3b" class="dot" stroke="#000000" cx="640" cy="300" r="10" />
+                    <circle id="4b" class="dot" stroke="#000000" cx="640" cy="350" r="10" />
+                    <circle id="5b" class="dot" stroke="#000000" cx="640" cy="400" r="10" />
+                    <circle id="6b" class="dot" stroke="#000000" cx="700" cy="200" r="10" />
+                    <circle id="7b" class="dot" stroke="#000000" cx="700" cy="250" r="10" />
+                    <circle id="8b" class="dot" stroke="#000000" cx="700" cy="300" r="10" />
+                    <circle id="9b" class="dot" stroke="#000000" cx="700" cy="350" r="10" />
+                    <circle id="10b" class="dot" stroke="#000000" cx="700" cy="400" r="10" />
+    
+                    <text x="465" y="348" >Flip</text>
+    
+                    <text id="savedroll" class="numero" x="240" y="280"></text>
+                    <text id="gamestatus" x="440" y="480"></text>
+    
+                    <text x="10" y="480">Chips:</text>
+                    <text id="LifeSavings" x="52" y="480">100</text>
+                    
+    
+                    <rect stroke="#ffffff" fill="#202020" x="450" y="350" width="60" height="40"/>
+                    <rect class="clickable" onclick="flipCards()" stroke="none" fill="#999999" fill-opacity="0" x="450" y="350" width="60" height="40" />
+    
+                </svg>
+            </div>
+            Rules:
+            <br />
+            1. 
+            <br />
+                a. If roll is 7 or 11 you Win
+                <br />
+                b. If roll is 2, 3, or 12 you Lose
+                <br />
+                c. If conditions a & b are not met, continue to step 2.
+                <br />
+            2. Remember the roll
+            <br />
+            3.
+            <br />
+                a. Re-Roll
+                <br />
+                b. If the new roll is equal to the original roll you win
+                <br />
+                c. If the roll is equal to 7 you Lose
+                <br />
+                d If conditions in b & c are not met repeat step 3
+        </body>
+     </html>
