@@ -39,73 +39,76 @@ var lifeSavings = 100;
     
                         
                         if (selectcard == 1){
-                            $("#" + 7 + ident).css("visibility", "visible");
+                            $("#" + 11 + ident).css("visibility", "visible");
                         }else if (selectcard == 2){
                             $("#" + 1 + ident).css("visibility", "visible");
-                            $("#" + 6 + ident).css("visibility", "visible");
+                            $("#" + 10 + ident).css("visibility", "visible");
                         }else if (selectcard == 3){
                             $("#" + 1 + ident).css("visibility", "visible");
-                            $("#" + 6 + ident).css("visibility", "visible");
-                            $("#" + 7 + ident).css("visibility", "visible");
+                            $("#" + 10 + ident).css("visibility", "visible");
+                            $("#" + 11 + ident).css("visibility", "visible");
                         }else if (selectcard == 4){
                             $("#" + 1 + ident).css("visibility", "visible");
-                            $("#" + 3 + ident).css("visibility", "visible");
-                            $("#" + 4 + ident).css("visibility", "visible");
+                            $("#" + 5 + ident).css("visibility", "visible");
                             $("#" + 6 + ident).css("visibility", "visible");
+                            $("#" + 10 + ident).css("visibility", "visible");
                         }else if (selectcard == 5){
                             $("#" + 1 + ident).css("visibility", "visible");
-                            $("#" + 3 + ident).css("visibility", "visible");
-                            $("#" + 4 + ident).css("visibility", "visible");
+                            $("#" + 5 + ident).css("visibility", "visible");
                             $("#" + 6 + ident).css("visibility", "visible");
-                            $("#" + 7 + ident).css("visibility", "visible");
+                            $("#" + 10 + ident).css("visibility", "visible");
+                            $("#" + 11 + ident).css("visibility", "visible");
                         }else if (selectcard == 6){
-                            $("#" + 1 + ident).css("visibility", "visible");
+                            $("#" + 2 + ident).css("visibility", "visible");
                             $("#" + 3 + ident).css("visibility", "visible");
                             $("#" + 4 + ident).css("visibility", "visible");
-                            $("#" + 6 + ident).css("visibility", "visible");
                             $("#" + 7 + ident).css("visibility", "visible");
+                            $("#" + 8 + ident).css("visibility", "visible");
+                            $("#" + 9 + ident).css("visibility", "visible");
                         }else if (selectcard == 7){
-                            $("#" + 1 + ident).css("visibility", "visible");
+                            $("#" + 2 + ident).css("visibility", "visible");
                             $("#" + 3 + ident).css("visibility", "visible");
                             $("#" + 4 + ident).css("visibility", "visible");
-                            $("#" + 6 + ident).css("visibility", "visible");
                             $("#" + 7 + ident).css("visibility", "visible");
+                            $("#" + 8 + ident).css("visibility", "visible");
+                            $("#" + 9 + ident).css("visibility", "visible");
+                            $("#" + 11 + ident).css("visibility", "visible");
                         }else if (selectcard == 8){
-                            $("#" + 1 + ident).css("visibility", "visible");
+                            $("#" + 2 + ident).css("visibility", "visible");
                             $("#" + 3 + ident).css("visibility", "visible");
                             $("#" + 4 + ident).css("visibility", "visible");
-                            $("#" + 6 + ident).css("visibility", "visible");
+                            $("#" + 5 + ident).css("visibility", "visible");
                             $("#" + 7 + ident).css("visibility", "visible");
+                            $("#" + 8 + ident).css("visibility", "visible");
+                            $("#" + 9 + ident).css("visibility", "visible");
+                            $("#" + 10 + ident).css("visibility", "visible");
                         }else if (selectcard == 9){
-                            $("#" + 1 + ident).css("visibility", "visible");
+                            $("#" + 2 + ident).css("visibility", "visible");
                             $("#" + 3 + ident).css("visibility", "visible");
                             $("#" + 4 + ident).css("visibility", "visible");
-                            $("#" + 6 + ident).css("visibility", "visible");
+                            $("#" + 5 + ident).css("visibility", "visible");
                             $("#" + 7 + ident).css("visibility", "visible");
+                            $("#" + 8 + ident).css("visibility", "visible");
+                            $("#" + 9 + ident).css("visibility", "visible");
+                            $("#" + 10 + ident).css("visibility", "visible");
+                            $("#" + 11 + ident).css("visibility", "visible");
                         }else if (selectcard == 10){
                             $("#" + 1 + ident).css("visibility", "visible");
+                            $("#" + 2 + ident).css("visibility", "visible");
                             $("#" + 3 + ident).css("visibility", "visible");
                             $("#" + 4 + ident).css("visibility", "visible");
+                            $("#" + 5 + ident).css("visibility", "visible");
                             $("#" + 6 + ident).css("visibility", "visible");
                             $("#" + 7 + ident).css("visibility", "visible");
+                            $("#" + 8 + ident).css("visibility", "visible");
+                            $("#" + 9 + ident).css("visibility", "visible");
+                            $("#" + 10 + ident).css("visibility", "visible");
                         }else if (selectcard == 11){
-                            $("#" + 1 + ident).css("visibility", "visible");
-                            $("#" + 3 + ident).css("visibility", "visible");
-                            $("#" + 4 + ident).css("visibility", "visible");
-                            $("#" + 6 + ident).css("visibility", "visible");
-                            $("#" + 7 + ident).css("visibility", "visible");
+                            $("#jack" + ident).css("visibility", "visible");
                         }else if (selectcard == 12){
-                            $("#" + 1 + ident).css("visibility", "visible");
-                            $("#" + 3 + ident).css("visibility", "visible");
-                            $("#" + 4 + ident).css("visibility", "visible");
-                            $("#" + 6 + ident).css("visibility", "visible");
-                            $("#" + 7 + ident).css("visibility", "visible");
+                            $("#queen" + ident).css("visibility", "visible");
                         }else if (selectcard == 13){
-                            $("#" + 1 + ident).css("visibility", "visible");
-                            $("#" + 3 + ident).css("visibility", "visible");
-                            $("#" + 4 + ident).css("visibility", "visible");
-                            $("#" + 6 + ident).css("visibility", "visible");
-                            $("#" + 7 + ident).css("visibility", "visible");
+                            $("#king" + ident).css("visibility", "visible");
                         }
                     }   
     
