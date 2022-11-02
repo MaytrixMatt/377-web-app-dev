@@ -1,3 +1,7 @@
+var deck = ["1D","2D","3D","4D","5D","6D","7D","8D","9D","0D","jD","qD","kD",
+            "1H","2H","3H","4H","5H","6H","7H","8H","9H","0H","jH","qH","kH",
+            "1S","2S","3S","4S","5S","6S","7S","8S","9S","0S","jS","qS","kS",
+            "1C","2C","3C","4C","5C","6C","7C","8C","9C","0C","jC","qC","kC"];
 var lifeSavings = 100;
 var point = 0;
 var bet = 0;
@@ -15,144 +19,199 @@ function flipCards(){
     var cardUno;
     var cardDos;
     var ident = "a";
-
-    while (point == 0 && (bet > lifeSavings || bet <= 4.9)){
-        bet = 0
-        bet = parseInt(prompt("Place your bets"));
-    }
-
-
+    
     $(".dot").css("visibility", "hidden");
     $("#gamestatus").html("");
-
+    
     for(var i = 0; i < 2; i++){
         
-        var selectcard = Math.floor(Math.random() * 13 + 1);
-        var suit = Math.floor(Math.random() * 4 + 1);
-
-        if(suit == 1){
-            suit = "D"
-        }else if(suit == 2){
-            suit = "H"
-        }else if(suit == 3){
-            suit = "S"
-        }else{
-            suit = "C"
-        }
-
+        var selectcard = deck[Math.floor(Math.random() * deck.length)];
+        console.log(selectcard)
+        //console.log(deck);
+        var suit = selectcard.substr(1,1);
+        var rank = parseInt(selectcard.substr(0,1))
+        console.log(rank)
+        deck.splice(parseInt(selectcard.substr(0,1)),1);
+        
         if(i == 1){
             ident = "b"
             cardDos = selectcard;
         }else{
             cardUno = selectcard;
         }
-
         
-        if (selectcard == 1){
+        
+        if (rank == 1){
             $("#" + 11 + ident).css("visibility", "visible");
-        }else if (selectcard == 2){
+        }else if (rank == 2){
             $("#" + 1 + ident).css("visibility", "visible");
             $("#" + 10 + ident).css("visibility", "visible");
-        }else if (selectcard == 3){
+        }else if (rank == 3){
             $("#" + 1 + ident).css("visibility", "visible");
             $("#" + 10 + ident).css("visibility", "visible");
             $("#" + 11 + ident).css("visibility", "visible");
-        }else if (selectcard == 4){
-            $("#" + 1 + ident).css("visibility", "visible");
-            $("#" + 5 + ident).css("visibility", "visible");
-            $("#" + 6 + ident).css("visibility", "visible");
-            $("#" + 10 + ident).css("visibility", "visible");
-        }else if (selectcard == 5){
+        }else if (rank == 4){
             $("#" + 1 + ident).css("visibility", "visible");
             $("#" + 5 + ident).css("visibility", "visible");
             $("#" + 6 + ident).css("visibility", "visible");
             $("#" + 10 + ident).css("visibility", "visible");
-            $("#" + 11 + ident).css("visibility", "visible");
-        }else if (selectcard == 6){
-            $("#" + 2 + ident).css("visibility", "visible");
-            $("#" + 3 + ident).css("visibility", "visible");
-            $("#" + 4 + ident).css("visibility", "visible");
-            $("#" + 7 + ident).css("visibility", "visible");
-            $("#" + 8 + ident).css("visibility", "visible");
-            $("#" + 9 + ident).css("visibility", "visible");
-        }else if (selectcard == 7){
-            $("#" + 2 + ident).css("visibility", "visible");
-            $("#" + 3 + ident).css("visibility", "visible");
-            $("#" + 4 + ident).css("visibility", "visible");
-            $("#" + 7 + ident).css("visibility", "visible");
-            $("#" + 8 + ident).css("visibility", "visible");
-            $("#" + 9 + ident).css("visibility", "visible");
-            $("#" + 11 + ident).css("visibility", "visible");
-        }else if (selectcard == 8){
-            $("#" + 2 + ident).css("visibility", "visible");
-            $("#" + 3 + ident).css("visibility", "visible");
-            $("#" + 4 + ident).css("visibility", "visible");
-            $("#" + 5 + ident).css("visibility", "visible");
-            $("#" + 7 + ident).css("visibility", "visible");
-            $("#" + 8 + ident).css("visibility", "visible");
-            $("#" + 9 + ident).css("visibility", "visible");
-            $("#" + 10 + ident).css("visibility", "visible");
-        }else if (selectcard == 9){
-            $("#" + 2 + ident).css("visibility", "visible");
-            $("#" + 3 + ident).css("visibility", "visible");
-            $("#" + 4 + ident).css("visibility", "visible");
-            $("#" + 5 + ident).css("visibility", "visible");
-            $("#" + 7 + ident).css("visibility", "visible");
-            $("#" + 8 + ident).css("visibility", "visible");
-            $("#" + 9 + ident).css("visibility", "visible");
-            $("#" + 10 + ident).css("visibility", "visible");
-            $("#" + 11 + ident).css("visibility", "visible");
-        }else if (selectcard == 10){
+        }else if (rank == 5){
             $("#" + 1 + ident).css("visibility", "visible");
-            $("#" + 2 + ident).css("visibility", "visible");
-            $("#" + 3 + ident).css("visibility", "visible");
-            $("#" + 4 + ident).css("visibility", "visible");
             $("#" + 5 + ident).css("visibility", "visible");
             $("#" + 6 + ident).css("visibility", "visible");
+            $("#" + 10 + ident).css("visibility", "visible");
+            $("#" + 11 + ident).css("visibility", "visible");
+        }else if (rank == 6){
+            $("#" + 2 + ident).css("visibility", "visible");
+            $("#" + 3 + ident).css("visibility", "visible");
+            $("#" + 4 + ident).css("visibility", "visible");
+            $("#" + 7 + ident).css("visibility", "visible");
+            $("#" + 8 + ident).css("visibility", "visible");
+            $("#" + 9 + ident).css("visibility", "visible");
+        }else if (rank == 7){
+            $("#" + 2 + ident).css("visibility", "visible");
+            $("#" + 3 + ident).css("visibility", "visible");
+            $("#" + 4 + ident).css("visibility", "visible");
+            $("#" + 7 + ident).css("visibility", "visible");
+            $("#" + 8 + ident).css("visibility", "visible");
+            $("#" + 9 + ident).css("visibility", "visible");
+            $("#" + 11 + ident).css("visibility", "visible");
+        }else if (rank == 8){
+            $("#" + 2 + ident).css("visibility", "visible");
+            $("#" + 3 + ident).css("visibility", "visible");
+            $("#" + 4 + ident).css("visibility", "visible");
+            $("#" + 5 + ident).css("visibility", "visible");
             $("#" + 7 + ident).css("visibility", "visible");
             $("#" + 8 + ident).css("visibility", "visible");
             $("#" + 9 + ident).css("visibility", "visible");
             $("#" + 10 + ident).css("visibility", "visible");
-        }else if (selectcard == 11){
+        }else if (rank == 9){
+            $("#" + 2 + ident).css("visibility", "visible");
+            $("#" + 3 + ident).css("visibility", "visible");
+            $("#" + 4 + ident).css("visibility", "visible");
+            $("#" + 5 + ident).css("visibility", "visible");
+            $("#" + 7 + ident).css("visibility", "visible");
+            $("#" + 8 + ident).css("visibility", "visible");
+            $("#" + 9 + ident).css("visibility", "visible");
+            $("#" + 10 + ident).css("visibility", "visible");
+            $("#" + 11 + ident).css("visibility", "visible");
+        }else if (rank == 0){
+            for(var j = 1; j < 11; j++){
+                $("#" + j + ident).css("visibility", "visible");
+            }
+        }else if (selectcard.substr(0,1) == "j"){
             $("#jack" + ident).css("visibility", "visible");
             $("#card" + ident).html("Jack")
-        }else if (selectcard == 12){
+        }else if (selectcard.substr(0,1) == "q"){
             $("#queen" + ident).css("visibility", "visible");
             $("#card" + ident).html("Queen")
-        }else if (selectcard == 13){
+        }else if (selectcard.substr(0,1) == "k"){
             $("#king" + ident).css("visibility", "visible");
             $("#card" + ident).html("King")
         }
-        if(0 < selectcard < 11){
-            $("#card" + ident).html(selectcard);
+        if(rank < 11){
+            $("#card" + ident).html(rank);
         }
         $("#suit" + ident).html(suit);
     }   
+    //flipDealerCards();
+}
 
-    var elSum = cardUno + cardDos;
+function flipDealerCards(){
+    var cardTres;
+    var cardCuatro;
+    var ident = "c";
 
+    $(".ddot").css("visibility", "hidden");
+    $("#gamestatus").html("");
 
-    if(point == 0){
-        if(elSum == 7 || elSum == 11){
-            $("#gamestatus").html("Win");
-            calcuclateDeviationOfLifeSavings(bet,true);
-        }else if(elSum == 2 || elSum == 3 || elSum == 12){
-            $("#gamestatus").html("Lose");
-            calcuclateDeviationOfLifeSavings(bet,false);
+    for(var i = 0; i < 2; i++){
+        
+        var selectcard = deck[Math.floor(Math.random() * deck.length)];
+        var suit = selectcard.substr(1,1);
+        var rank = parseInt(selectcard.substr(0,1))
+        deck.splice(selectcard);
+        
+        if(i == 1){
+            ident = "d"
+            cardCuatro = selectcard;
         }else{
-            point = elSum;
-            $("#savedroll").html(point);
+            cardTres = selectcard;
         }
-    }else{
-        if(point == elSum){
-            $("#gamestatus").html("Win");
-            calcuclateDeviationOfLifeSavings(bet,true);
-            point = 0;
-        }else if(elSum == 7){
-            $("#gamestatus").html("Lose");
-            calcuclateDeviationOfLifeSavings(bet,false);
-            point = 0;
+
+        
+        if (rank == 1){
+            $("#" + 11 + ident).css("visibility", "visible");
+        }else if (rank == 2){
+            $("#" + 1 + ident).css("visibility", "visible");
+            $("#" + 10 + ident).css("visibility", "visible");
+        }else if (rank == 3){
+            $("#" + 1 + ident).css("visibility", "visible");
+            $("#" + 10 + ident).css("visibility", "visible");
+            $("#" + 11 + ident).css("visibility", "visible");
+        }else if (rank == 4){
+            $("#" + 1 + ident).css("visibility", "visible");
+            $("#" + 5 + ident).css("visibility", "visible");
+            $("#" + 6 + ident).css("visibility", "visible");
+            $("#" + 10 + ident).css("visibility", "visible");
+        }else if (rank == 5){
+            $("#" + 1 + ident).css("visibility", "visible");
+            $("#" + 5 + ident).css("visibility", "visible");
+            $("#" + 6 + ident).css("visibility", "visible");
+            $("#" + 10 + ident).css("visibility", "visible");
+            $("#" + 11 + ident).css("visibility", "visible");
+        }else if (rank == 6){
+            $("#" + 2 + ident).css("visibility", "visible");
+            $("#" + 3 + ident).css("visibility", "visible");
+            $("#" + 4 + ident).css("visibility", "visible");
+            $("#" + 7 + ident).css("visibility", "visible");
+            $("#" + 8 + ident).css("visibility", "visible");
+            $("#" + 9 + ident).css("visibility", "visible");
+        }else if (rank == 7){
+            $("#" + 2 + ident).css("visibility", "visible");
+            $("#" + 3 + ident).css("visibility", "visible");
+            $("#" + 4 + ident).css("visibility", "visible");
+            $("#" + 7 + ident).css("visibility", "visible");
+            $("#" + 8 + ident).css("visibility", "visible");
+            $("#" + 9 + ident).css("visibility", "visible");
+            $("#" + 11 + ident).css("visibility", "visible");
+        }else if (rank == 8){
+            $("#" + 2 + ident).css("visibility", "visible");
+            $("#" + 3 + ident).css("visibility", "visible");
+            $("#" + 4 + ident).css("visibility", "visible");
+            $("#" + 5 + ident).css("visibility", "visible");
+            $("#" + 7 + ident).css("visibility", "visible");
+            $("#" + 8 + ident).css("visibility", "visible");
+            $("#" + 9 + ident).css("visibility", "visible");
+            $("#" + 10 + ident).css("visibility", "visible");
+        }else if (rank == 9){
+            $("#" + 2 + ident).css("visibility", "visible");
+            $("#" + 3 + ident).css("visibility", "visible");
+            $("#" + 4 + ident).css("visibility", "visible");
+            $("#" + 5 + ident).css("visibility", "visible");
+            $("#" + 7 + ident).css("visibility", "visible");
+            $("#" + 8 + ident).css("visibility", "visible");
+            $("#" + 9 + ident).css("visibility", "visible");
+            $("#" + 10 + ident).css("visibility", "visible");
+            $("#" + 11 + ident).css("visibility", "visible");
+        }else if (rank == 0){
+            for(var j = 1; j < 11; j++){
+                $("#" + j + ident).css("visibility", "visible");
+            }
+        }else if (selectcard.substr(0,q) == "j"){
+            $("#jack" + ident).css("visibility", "visible");
+            $("#card" + ident).html("Jack")
+        }else if (selectcard.substr(0,1) == "q"){
+            $("#queen" + ident).css("visibility", "visible");
+            $("#card" + ident).html("Queen")
+        }else if (selectcard.substr(0,1) == "k"){
+            $("#king" + ident).css("visibility", "visible");
+            $("#card" + ident).html("King")
         }
-    }
+        if(rank < 11){
+            $("#card" + ident).html(rank);
+        }
+        $("#suit" + ident).html(suit);
+    }   
 
 }
