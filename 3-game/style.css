@@ -24,7 +24,7 @@ svg{
     100% {color: purple}
 }
 
-#suita, #suitb, #suitc{
+#suita, #suitb, #suitc, #suitd{
     stroke:red;
     fill:red;
 }

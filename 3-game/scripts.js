@@ -24,14 +24,15 @@ function flipCards(){
     $("#gamestatus").html("");
     
     for(var i = 0; i < 2; i++){
-        
-        var selectcard = deck[Math.floor(Math.random() * deck.length)];
-        console.log(selectcard)
-        //console.log(deck);
+        var index = Math.floor(Math.random() * deck.length);
+        var selectcard = deck[index];
+        //console.log(selectcard);
         var suit = selectcard.substr(1,1);
         var rank = parseInt(selectcard.substr(0,1))
-        console.log(rank)
-        deck.splice(parseInt(selectcard.substr(0,1)),1);
+        console.log(selectcard + " parses to " + rank + " of " + suit + " " + deck.length );
+        //console.log(deck);
+        deck.splice(index,1);
+        //console.log(deck);
         
         if(i == 1){
             ident = "b"
@@ -114,7 +115,7 @@ function flipCards(){
         }
         $("#suit" + ident).html(suit);
     }   
-    //flipDealerCards();
+    flipDealerCards();
 }
 
 function flipDealerCards(){
@@ -127,10 +128,11 @@ function flipDealerCards(){
 
     for(var i = 0; i < 2; i++){
         
-        var selectcard = deck[Math.floor(Math.random() * deck.length)];
+        var index = Math.floor(Math.random() * deck.length);
+        var selectcard = deck[index];
         var suit = selectcard.substr(1,1);
         var rank = parseInt(selectcard.substr(0,1))
-        deck.splice(selectcard);
+        deck.splice(index,1);
         
         if(i == 1){
             ident = "d"
@@ -198,7 +200,7 @@ function flipDealerCards(){
             for(var j = 1; j < 11; j++){
                 $("#" + j + ident).css("visibility", "visible");
             }
-        }else if (selectcard.substr(0,q) == "j"){
+        }else if (selectcard.substr(0,1) == "j"){
             $("#jack" + ident).css("visibility", "visible");
             $("#card" + ident).html("Jack")
         }else if (selectcard.substr(0,1) == "q"){
