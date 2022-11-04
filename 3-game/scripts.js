@@ -21,9 +21,13 @@ function flipCards(){
     var ident = "a";
     
     $(".dot").css("visibility", "hidden");
-    $("#gamestatus").html("");
     
     for(var i = 0; i < 2; i++){
+
+        if(deck.length == 0){
+            endGame("Draw!");
+        }
+
         var index = Math.floor(Math.random() * deck.length);
         var selectcard = deck[index];
         //console.log(selectcard);
@@ -116,6 +120,16 @@ function flipCards(){
         $("#suit" + ident).html(suit);
     }   
     flipDealerCards();
+
+    if(cardTres =="5H" || cardCuatro =="5H"){
+        endGame("Lose!");
+    }
+
+    if(parseInt(cardUno.substr(0,1)) == parseInt(cardDos.substr(0,1))){
+        endGame("Win!");
+    }
+
+
 }
 
 function flipDealerCards(){
@@ -124,9 +138,12 @@ function flipDealerCards(){
     var ident = "c";
 
     $(".ddot").css("visibility", "hidden");
-    $("#gamestatus").html("");
 
     for(var i = 0; i < 2; i++){
+
+        if(deck.length == 0){
+            endGame("Draw!");
+        }
         
         var index = Math.floor(Math.random() * deck.length);
         var selectcard = deck[index];
@@ -214,6 +231,18 @@ function flipDealerCards(){
             $("#card" + ident).html(rank);
         }
         $("#suit" + ident).html(suit);
-    }   
+    }
 
+    if(parseInt(cardTres.substr(0,1)) =="1" || parseInt(cardCuatro.substr(0,1)) =="1"){
+        endGame("Draw!");
+    }
+
+
+}
+
+
+function endGame(status){
+    $("#end").css("visibility", "visible");
+    $("#endtext").css("visibility", "visible");
+    $("#endtext").html(status);
 }

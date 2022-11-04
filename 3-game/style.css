@@ -28,3 +28,15 @@ svg{
     stroke:red;
     fill:red;
 }
+
+.win{
+    color:rgb(4, 90, 4);
+}
+
+.lose{
+    color:red;
+}
+
+.draw{
+    color:rgb(153, 212, 35);
+}

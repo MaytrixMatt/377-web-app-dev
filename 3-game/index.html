@@ -1,7 +1,7 @@
 <DOCTYPE html>
     <html lang="en">
         <head>
-            <title>Blackjack</title>
+            <title>Pairs</title>
     
             <link rel="stylesheet" type="text/css" href="style.css">
     
@@ -13,7 +13,7 @@
     
         <body>
     
-            <h1>Blackjack</h1>
+            <h1>Pairs</h1>
             <div style="border: solid black 1px; width: 1000px;">
     
                 <svg width="1000" height="500">
@@ -90,52 +90,54 @@
                     <text id ="jackd" class="ddot" x="960" y="85" font-size="40">J</text>
                     <text id ="queend" class="ddot" x="960" y="85" font-size="40">Q</text>
                     <text id ="kingd" class="ddot" x="960" y="85" font-size="40">K</text>
-
                     
-
                     <text id="carda" x="320" y="170">Test</text>
                     <text id="cardb" x="720" y="170">Test</text>
-
+                    
                     <text id="suita" x="220" y="170">TS1</text>
                     <text id="suitb" x="620" y="170">TS2</text>
                     <text id="suitc" x="865" y="120">TS3</text>
                     <text id="suitd" x="965" y="120">TS4</text>
-
-
-
+                    
+                    
+                    
                     <text x="465" y="348" >Flip</text>
-    
-                    <text id="gamestatus" x="440" y="480"></text>
-    
+                    
                     <text x="10" y="480">Chips:</text>
                     <text id="LifeSavings" x="52" y="480">100</text>
                     
-    
+                    
                     <rect stroke="#ffffff" fill="#202020" x="450" y="350" width="60" height="40"/>
                     <rect class="clickable" onclick="flipCards()" stroke="none" fill="#999999" fill-opacity="0" x="450" y="350" width="60" height="40" />
-    
+                    
+                    <rect stroke="#ffffff" fill="#000000" x ="200" y="150" width="550" height="300" id="end" visibility="hidden" />
+                    <text id="endtext" x="280" y="350" font-size="150px" stroke="green" fill="green" visibility="hidden">Status</text>
                 </svg>
             </div>
             Rules:
             <br />
             1. 
             <br />
-                a. If you are dealt a Jack of Clubs you <span class = "win">Win</span>
+                a. If you are dealt the Jack of Clubs you <span class = "win">Win</span>.
                 <br />
-                b. If you are dealt a Two of Spades or a Five of Hearts you <span class = "lose">Lose</span>
+                b. If you are dealt the Two of Spades or the Five of Hearts you <span class = "lose">Lose</span>.
                 <br />
                 c. If conditions a & b are not met, continue to step 2.
+                <br /> 
+            <br />
+            2.
+            <br />
+                a. Deal a new hand, if the <span class = "lose">Five of Hearts</span> is dealt you <span class ="lose">Lose</span>.
                 <br />
-            2. 
+                b. If  you are dealt a pair of anything but the <span class = "lose">Five of Hearts</span> you <span class = "win">Win</span>.
+                <br />
+                c. If the dealer has an <span class = "draw">Ace</span> the game ends in a <span class = "draw">Draw</span>
+                <br />
+                d If conditions in b & c are not met repeat step 2.
+                <br />
             <br />
             3.
             <br />
-                a. Deal a new hand, if the <span class = "lose">Five of Hearts</span> is dealt you <span class ="lose">Lose</span> .
-                <br />
-                b. If 
-                <br />
-                c. If the roll is equal to 7 you Lose
-                <br />
-                d If conditions in b & c are not met repeat step 3
+            If the deck runs out a <span class = "draw">Draw</span> occurs.
         </body>
      </html>
