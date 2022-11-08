@@ -33,7 +33,7 @@ function flipCards(){
         //console.log(selectcard);
         var suit = selectcard.substr(1,1);
         var rank = parseInt(selectcard.substr(0,1))
-        console.log(selectcard + " parses to " + rank + " of " + suit + " " + deck.length );
+        //console.log(selectcard + " parses to " + rank + " of " + suit + " " + deck.length );
         //console.log(deck);
         deck.splice(index,1);
         //console.log(deck);
@@ -118,16 +118,21 @@ function flipCards(){
             $("#card" + ident).html(rank);
         }
         $("#suit" + ident).html(suit);
-    }   
-    flipDealerCards();
-
-    if(cardTres =="5H" || cardCuatro =="5H"){
+    } 
+    if(cardUno =="jC" || cardDos =="jC"){
+        endGame("Win!");
+    }
+    
+    if(cardUno =="5H" || cardDos =="5H" || cardUno =="2S" || cardDos =="2S"){
         endGame("Lose!");
     }
 
     if(parseInt(cardUno.substr(0,1)) == parseInt(cardDos.substr(0,1))){
         endGame("Win!");
     }
+
+    flipDealerCards();
+
 
 
 }

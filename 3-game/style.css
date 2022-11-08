@@ -1,7 +1,10 @@
-h1{
+h1, #pair{
     animation: color-change 5s infinite;
+}
+
+h1{
     text-shadow: 1px 1px black
-    }
+}
 
 .numero{
     font-weight:bolder;
@@ -30,7 +33,7 @@ svg{
 }
 
 .win{
-    color:rgb(4, 90, 4);
+    color:rgb(26, 100, 26);
 }
 
 .lose{
@@ -38,5 +41,5 @@ svg{
 }
 
 .draw{
-    color:rgb(153, 212, 35);
+    color:rgb(196, 207, 33);
 }
