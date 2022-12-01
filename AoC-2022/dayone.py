@@ -42,3 +42,5 @@ def part2():
     total = max1 + max2 + max3
     print("Part 2: " + str(total))
 part2()
+#PS C:\Users\mcollins24\Desktop\377-web-app-dev> cd .\AoC-2022\   
+#PS C:\Users\mcollins24\Desktop\377-web-app-dev\AoC-2022> python3 dayone.py
