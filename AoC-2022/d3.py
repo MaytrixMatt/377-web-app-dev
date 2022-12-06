@@ -3,15 +3,17 @@ def part1():
     lines = file.readlines()
     compartmentSimilarities = []
     for line in lines:
+        mid = int(len(line)/2)
+        string1 = line[0:(mid-1)]
+        string2 = line[mid:(mid*2-1)]
+        for j in range(mid):
 
-        for j in range(len(line)/2):
-            
-            for k in range(len(line)/2,len(line)/2):
+                if(string1[j-1] in string2):
 
-                if(line[j] == line[k]):
-                    
-                    compartmentSimilarities.push(line[j])
+                    compartmentSimilarities.append(string1[j])
+                    break
 
+    
     print(compartmentSimilarities)
 #cd .\AoC-2022\   
 #python3 d3.py
