@@ -43,10 +43,11 @@ def part2():
 
     for line in lines:
 
+        line = line.strip()
         compartmentSimilarities.append(line)
 
-        if(findSimilarites(compartmentSimilarities) != None):
-
+        if(len(compartmentSimilarities) == 3):
+                    letter = findSimilarites(compartmentSimilarities)
                     sum += getPriority(letter)
                     compartmentSimilarities = []
 
