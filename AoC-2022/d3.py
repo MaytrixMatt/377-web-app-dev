@@ -29,9 +29,28 @@ def part1():
     print(compartmentSimilarities)
 #cd .\AoC-2022\   
 #python3 d3.py
-part1()
+
+def findSimilarites(array):
+    for letter in array[0]:
+        if letter in array[1] and letter in array[2]:
+            return letter
 
 def part2():
     file = open('d3.dat', 'r')
     lines = file.readlines()
-    compartmentSimilarities = 0
+    compartmentSimilarities = []
+    sum = 0
+
+    for line in lines:
+
+        compartmentSimilarities.append(line)
+
+        if(findSimilarites(compartmentSimilarities) != None):
+
+                    sum += getPriority(letter)
+                    compartmentSimilarities = []
+
+    print(sum)
+
+part1()
+part2()
