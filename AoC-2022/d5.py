@@ -1,12 +1,12 @@
-stacks = [['B', 'S', 'J', 'Z', 'V', 'D', 'G'], #1
-          ['P', 'V', 'G', 'M', 'S', 'Z'], #2
-          ['F', 'Q', 'T', 'W', 'S', 'B', 'L', 'C'], #3
-          ['Q', 'V', 'R', 'M', 'W', 'G', 'J', 'H'], #4
-          ['D', 'M', 'F', 'N', 'S', 'L', 'C'], #5
-          ['D', 'C', 'G', 'R'], #6
-          ['Q', 'S', 'D', 'J', 'R', 'T', 'G', 'H'], #7
-          ['V', 'F', 'P'], #8
-          ['J', 'T', 'S', 'R', 'D'] #9
+stacks = [['G', 'D', 'V', 'Z', 'J', 'S', 'B'], #1
+          ['Z', 'S', 'M', 'G', 'V', 'P'], #2
+          ['C', 'L', 'B', 'S', 'W', 'T', 'Q', 'F'], #3
+          ['H', 'J', 'G', 'W', 'M', 'R', 'V', 'Q'], #4
+          ['C', 'L', 'S', 'N', 'F', 'M', 'D'], #5
+          ['R', 'G', 'C', 'D'], #6
+          ['H', 'G', 'T', 'R', 'J', 'D', 'S', 'Q'], #7
+          ['P', 'F', 'V'], #8
+          ['D', 'R', 'S', 'T', 'J'] #9
          ]
 
 testgrid = [['Z', 'N'],
@@ -18,7 +18,7 @@ testgrid = [['Z', 'N'],
 moves = []
 
 def part1():
-    file = open('d5.snippet.dat', 'r')
+    file = open('d5.dat', 'r')
     lines = file.readlines()
 
     for line in lines:
@@ -35,9 +35,9 @@ def part1():
         moveTo = move[2]
 
         for i in range(moveCount):
-            crate = testgrid[moveFrom].pop()
-            testgrid[moveTo].append(crate)
+            crate = stacks[moveFrom].pop()
+            stacks[moveTo].append(crate)
 
-    print(testgrid)
+    print(stacks)
 
 part1()
