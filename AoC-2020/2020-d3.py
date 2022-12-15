@@ -1,36 +1,24 @@
-def part1():
+def calcNumTrees(x,y):
     file = open('2020-d3.dat', 'r')
     lines = file.readlines()
-    yLocation = 0
-    numTrees = 0
-    for line in lines:
-        if(line[yLocation%31] == '#'):
-            numTrees += 1
-        yLocation += 3
-    print(numTrees)
-part1()
-
-def calcNumTrees(y,x,lines):
-    yLocation = 0
+    xLocation = 0
     numTrees = 0
     counter = 0
-    
     for line in lines:
-        if(counter % 2 == 0):
-            if(line[yLocation % 31] == '#'):
+        line=line.strip()
+        if(counter % y == 0):
+            if(line[xLocation % len(line)] == '#'):
                 numTrees += 1
-            yLocation += y
-
-        if(x == 2):
-            counter += 1
+            xLocation += x
+        counter += 1
     return(numTrees)
 
 
+def part1():
+    print(calcNumTrees(3,1))
+part1()
+
+
 def part2():
-    file = open('2020-d3.dat', 'r')
-    lines = file.readlines()
-    totalTrees = calcNumTrees(1,1,lines)*calcNumTrees(3,1,lines)*calcNumTrees(5,1,lines)*calcNumTrees(7,1,lines)*calcNumTrees(1,2,lines)
-    print(totalTrees)
+    print(calcNumTrees(1,1)*calcNumTrees(1,3)*calcNumTrees(1,5)*calcNumTrees(1,7)*calcNumTrees(2,1))
 part2()
-
-
