@@ -23,15 +23,15 @@ def part2():
     realLines = []
     reqs = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid']
     validPassports = 0
-    passportt = ''
+    currentPassport = ''
     for line in lines:
         line = line.strip()
         if line != '':
-            passportt += line
+            currentPassport += line
         else:
-            if all(char in passportt for char in reqs):
-                realLines.append(passportt)
-            passportt = ''
+            if all(char in currentPassport for char in reqs):
+                realLines.append(currentPassport)
+            currentPassport = ''
     for passport in realLines:
         count = 0
 
