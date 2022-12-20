@@ -13,25 +13,12 @@ def part1():
             if all(char in passport for char in reqs):
                 validPassports += 1
             passport = ''
-    print(validPassports)
-part1()
+    return(validPassports)
+print(part1())
 
 
 def part2():
-    file = open('2020-d4.dat', 'r')
-    lines = file.readlines()
-    realLines = []
-    reqs = ['byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid']
-    validPassports = 0
-    currentPassport = ''
-    for line in lines:
-        line = line.strip()
-        if line != '':
-            currentPassport += line
-        else:
-            if all(char in currentPassport for char in reqs):
-                realLines.append(currentPassport)
-            currentPassport = ''
+    realLines = part1()
     for passport in realLines:
         count = 0
 
