@@ -23,16 +23,24 @@ def part2():
     file = open('2020-d6.dat', 'r')
     lines = file.readlines()
     totalCount = 0
-    currentGroup = []
+    dictionary = {}
+    currentGroup = ''
     for line in lines:
         line = line.strip()
         if line != '':
-            currentGroup.append(line)
+            currentGroup = currentGroup + line
+            for char in line:
+                dictionary[char] = 0
         else:
-            for i in len(currentGroup)
-            if (char in currentGroup[1] for char in currentGroup[i]):
-            totalCount += len(yesCharStr)
+            for i in currentGroup:
+                for j in currentGroup:
+                    if (currentGroup[i] == currentGroup[j]):
+                        dictionary[char] += 1
+            for key in dictionary:
+                if (dictionary[key] == len(currentGroup)):
+                    totalCount += 1
             currentGroup = []
+            dictionary = {}
     print(totalCount)
 
 
