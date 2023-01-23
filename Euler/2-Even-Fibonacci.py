@@ -1,9 +1,10 @@
-previousnum = 0
-currentnum = 1
+previousnum = 1
+currentnum = 2
 total = 0
-while (currentnum < 4000000):
-    if ((currentnum + previousnum) % 2):
-        total += (currentnum + previousnum)
-    previousnum = currentnum
-    currentnum = (currentnum + previousnum)
+while (currentnum <= 4000000):
+    if currentnum % 2 == 0:
+        total += currentnum
+        var = previousnum + currentnum
+        previousnum = currentnum
+        currentnum = var
 print (total)
