@@ -13,3 +13,4 @@ for i in range(2,limit):
     if (num % i == 0 and isPrime(i)) :
         highestPrimeFactor = i
 print(highestPrimeFactor)
+# Solved Correctly
