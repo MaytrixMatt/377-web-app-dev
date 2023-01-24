@@ -1,9 +1,9 @@
 largest = 1001
 
 def checkPalindrome(x):
-    for i in range(len(x)):
-        if(x[i] == x[len(x) - i]):
-            if(i == len(x)):
+    for digit in range(len(x)):
+        if(x[digit] == x[len(x) - (digit + 1)]):
+            if(digit == (len(x) - 1)):
                 return True
             else:
                 continue
@@ -17,3 +17,5 @@ for i in range(100,999):
             string = str(possibility)
             if (checkPalindrome(string)):
                 largest = possibility
+print(largest)
+# Solved Correctly
