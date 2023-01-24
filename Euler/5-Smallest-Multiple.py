@@ -1,6 +1,10 @@
 number = 2520
-for i in range(11,21):
-    if not(number % i == 0):
-        number = number * ((number % i))
+while True: 
+    for i in range(11,21):
+        if (number % i == 0):
+            continue
+        else:
+            number += 2520
+            i = 11
+    break
 print(number)
-print(2520 % 13)
