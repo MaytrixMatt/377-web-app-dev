@@ -1,9 +1,15 @@
 import math
+def isPrime(x):
+    for i in range(2,math.floor(math.sqrt(x))):
+        if (x % i == 0):
+            return False
+    return True
+
 num = 600851475143
 limit = math.floor(math.sqrt(num))
 highestPrimeFactor = 0
-for i in range(limit):
-    if (not((i % 2 == 0) or (i % 3 == 0) or (i % 5 == 0))):
-        if (num % i == 0):
-            highestPrimeFactor = i
+
+for i in range(2,limit):
+    if (num % i == 0 and isPrime(i)) :
+        highestPrimeFactor = i
 print(highestPrimeFactor)
