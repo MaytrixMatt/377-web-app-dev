@@ -1,35 +1,37 @@
+<?php
+    include('library.php');
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Ticket List</title>
+        <script>
+            function deleteTicket(id){
+                if(confirm('Are you sure?')){
+                    alert('Deleting Files...')
+                    location.href = 'ticket-delete.php?id=' + id;
+                }
+            }
+        </script>
     </head>
 
     <body>
 
         <h1>Ticket List</h1>
 
-
         <table>
             <tr>
                 <th>ID</th>
                 <th>PRIORITY</th>
                 <th>ISSUE</th>
-                <th>EMIAL</th>
+                <th>EMAIL</th>
+                <th>DELETE</th>
             </tr>
-        <table>
-
 
         <?php
 
-            $servername = "localhost";
-            $username = "root";
-            $password = "password";
-            $dbname = "helpdesk";
-
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            if ($conn->connect_error){
-                die("Connection Falied: " . $conn->connect_error); 
-            }       
+            $conn = get_database_connection();
 
             $sql = "Select * From tickets";
 
@@ -39,13 +41,14 @@
                 echo "<td>" . $row['tck_id'] . "</td>";
                 echo "<td>" . $row['tck_priority'] . "</td>";
                 echo "<td>" . $row['tck_issue'] . "</td>";
-                echo "<td>" . $row['tck_email'] . "</td>";
+                echo "<td><a href='mailto:" . $row['tck_email'] . "'>" . $row['tck_email'] . "</a></td>";
+                echo "<td><button onclick='deleteTicket(". $row['tck_id'] . ")'>Delete</button></td>";
                 echo "</tr>";
             }
 
 
 
         ?>
-
+        </table>
     </body>
 </html>
