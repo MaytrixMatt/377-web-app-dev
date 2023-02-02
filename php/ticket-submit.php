@@ -1,3 +1,7 @@
+<?php
+    include('library.php');
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,15 +15,7 @@
         <?php
             extract($_REQUEST);
 
-            $servername = "localhost";
-            $username = "root";
-            $password = "password";
-            $dbname = "helpdesk";
-
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            if ($conn->connect_error){
-                die("Connection Falied: " . $conn->connect_error);
-            }
+            $conn = get_database_connection();
 
             $problem = $conn->real_escape_string($problem);
             $contact = $conn->real_escape_string($contact);
