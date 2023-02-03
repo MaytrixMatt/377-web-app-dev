@@ -9,12 +9,7 @@ function calculateBallVelos(timeConstant,timeError){
     console.log(constant + " ± " + error);
 }
 
-calculateBallVelos(0.00563,0.00009);
-
-
-
-
-
+calculateBallVelos(cons,err);
 
 
 // A replica of my original version - very hard to understand so I made the one above
