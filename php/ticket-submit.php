@@ -39,7 +39,7 @@
         <h3>Your unique ticket id: <span font-style="italic" id="ticketID"></span></h3>
 
         <a href="ticket-form.php">form</a>
-
+        <a href="ticket-list.php">list</a>
 
     </body>
 </html>

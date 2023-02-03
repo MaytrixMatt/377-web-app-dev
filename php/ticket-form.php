@@ -12,7 +12,11 @@
 
             Problem: <input type="text" name="problem" />
             <br>
-            Priority: <input type="text" name="priority" />
+            Priority: <select name="priority">
+                <option value = '1'>High</option>
+                <option value = '2'>Medium</option>
+                <option value = '3'>Low</option>
+            </select>
             <br>
             ContactE-Mail: <input type="text" name="contact" />
             <br>
