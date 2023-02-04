@@ -37,20 +37,12 @@ var arr = [];
 
 // click the helcopter then paste your image url to put an image in click off of it
 // first, then move
-
-
-
 function start(){
 	makeStart();
 	setTimer(findmo, 20); 
 	mouseDownMethod(doStuff);
 	mouseClickMethod(deleteMab);
 }
-
-
-
-
-
 function deleteMab(){
     keyDownMethod(deleteorRotorDup);    
 }    
@@ -115,10 +107,6 @@ function deleteorRotorDup(e){
 		}
 	}
 }
-
-
-
-
 // for a, |0 = circle or oval| |1 = square, rectangle, image| |2 = text|
 function stopStuff(){
     stopTimer(moveThing);
@@ -192,17 +180,8 @@ function moveThing(){
     }
 	mouseUpMethod(stopStuff);
 }
-
-
-
-
 // for a, |0 = circle| |1 = square, rectangle, image, oval| |2 = text|
 // make it so the oval can be longer on the x side
-
-
-
-
-
 function doStuff(){
 	var elem = getElementAt(nowEvalx, nowEvaly);
 	if (elem != null && nowEvaly < 345) {
@@ -636,6 +615,7 @@ function doStuff(){
             rect.setPosition(nowEvalx, nowEvaly);
             rect.setColor(Color.black);
             add(rect);
+            //192.168.1.203
 	    }
 	    if(shape == 3){
 	        var oval = new Oval(20, 40);
@@ -649,10 +629,8 @@ function doStuff(){
         rect.setColor(Color.black);
         add(rect);
 	    mode = 0;
-	}else{
-	    
+	}else{   
 	}
-	
     if (Math.abs(nowEvalx - 37.5)  <= 17.5 && Math.abs(nowEvaly - 397.5) <= 17.5){
         mode = 1;
     }
@@ -671,9 +649,6 @@ function doStuff(){
     if (Math.abs(nowEvalx - 205)  <= 40 && Math.abs(nowEvaly - 450) <= 18){
         mode = 6;
     }
-    
-     
- 
     if (mode == 1){
         var rect = new Rectangle(200, 150);
         rect.setPosition(255, 350);
@@ -701,11 +676,6 @@ function doStuff(){
     if (Math.abs(nowEvalx - 333)  <= 26 && Math.abs(nowEvaly - 440) <= 46 && mode == 1){
         shape = 3;
     }
-    
-    
-    
-    
-    
     if (mode == 2){
         var rect = new Rectangle(200, 150);
         rect.setPosition(255, 350);
@@ -779,10 +749,6 @@ function doStuff(){
     if (Math.abs(nowEvalx - 372.5)  <= 12.5 && Math.abs(nowEvaly - 462.5) <= 12.5 && mode == 2){
         calor = 9;
     }
-    
-    
-    
-    
     if (mode == 3){
         var rect = new Rectangle(200, 150);
         rect.setPosition(255, 350);
@@ -831,9 +797,6 @@ function doStuff(){
     if (Math.abs(nowEvalx - 332.5)  <= 12.5 && Math.abs(nowEvaly - 462.5) <= 12.5 && mode == 3){
         siz = 6;
     }
-    
-    
-    
     if (mode == 4){
         var rect = new Rectangle(200, 150);
         rect.setPosition(255, 350);
@@ -854,9 +817,6 @@ function doStuff(){
     if (Math.abs(nowEvalx - 362.5)  <= 17.5 && Math.abs(nowEvaly - 415) <= 30 && mode == 4){
         rotat = 2;
     }
-    
-    
-    
     if (mode == 5){
         var rect = new Rectangle(200, 150);
         rect.setPosition(255, 350);
@@ -868,8 +828,6 @@ function doStuff(){
         txt.setColor(Color.black);
         add(txt);
     }
-    
-    
     if (mode == 6){
         var rect = new Rectangle(200, 150);
         rect.setPosition(255, 350);
@@ -883,11 +841,6 @@ function doStuff(){
         add(copter);
     }
 }
-
-
-
-
-
 function findmo(){
     mouseMoveMethod(nowMo);
 }
@@ -895,12 +848,6 @@ function nowMo(e){
     nowEvalx = e.getX();
     nowEvaly = e.getY();
 }
-
-
-
-
-
-
 function makeStart(){
     var rect = new Rectangle(getWidth(), 150);
     rect.setPosition(0, 350);
@@ -910,7 +857,6 @@ function makeStart(){
     recta.setPosition(250, 350);
     recta.setColor(Color.white);
     add(recta);
-    
     var rec = new Rectangle(35, 35);
     rec.setPosition(20, 380);
     rec.setColor(Color.white);
@@ -938,7 +884,6 @@ function makeStart(){
 	copter.setSize(80, 40);
     copter.setPosition(160, 430);
     add(copter);
-    
     var circle = new Circle(2);
     circle.setPosition(0, getHeight());
     circle.setColor(Color.black);
