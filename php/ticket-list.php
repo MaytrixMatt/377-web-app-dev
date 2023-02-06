@@ -53,9 +53,6 @@
                 echo "</tr>";
             }
             echo "<a href= 'ticket-form.php'><button><i class='fa fa-plus-circle' aria-hidden='true'></i></button></a>";
-
-
-
         ?>
         </table>
     </body>
