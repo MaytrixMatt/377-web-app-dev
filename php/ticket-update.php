@@ -18,21 +18,19 @@
 
             $problem = $conn->real_escape_string($problem);
             $contact = $conn->real_escape_string($contact);
+            $resolution = $conn->real_escape_string($resolution);
+            $status = $conn->real_escape_string($status);
             
+            $sql = <<<SQL
+            UPDATE tickets
+            SET tck_issue = '{$problem}',tck_priority = {$priority},tck_
             
-            $sql = "INSERT INTO tickets (tck_issue, tck_priority, tck_email)" .
-            "VALUES ('$problem', $priority, '$contact')";
-            
+            SQL;
             echo $sql;
 
 
             $conn->query($sql);
-            
-            // echo  " Problem: $problem" .
-            //       " Soultion: Unknown" .
-            //       " Email: $contact" .
-            //       " Priority: $priority" .
-            //       " Status: Submitted" ;
+
             ?>
 
         <h3>Your unique ticket id: <span font-style="italic" id="ticketID"></span></h3>

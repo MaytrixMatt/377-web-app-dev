@@ -2,7 +2,6 @@
 <?php
     include('library.php');
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,11 +15,8 @@
             }
         </script>
     </head>
-
     <body>
-
         <h1>Ticket List</h1>
-
         <table>
             <tr>
                 <th>ID</th>
@@ -32,13 +28,9 @@
                 <th>STATUS</th>
                 <th>RESOLUTION</th>
             </tr>
-
         <?php
-
             $conn = get_database_connection();
-
             $sql = "Select * From tickets";
-
             $result = $conn->query($sql);
             while($row = $result->fetch_assoc()){
                 echo "<tr>";
@@ -46,7 +38,7 @@
                 echo "<td>" . $row['tck_priority'] . "</td>";
                 echo "<td>" . $row['tck_issue'] . "</td>";
                 echo "<td><a href='mailto:" . $row['tck_email'] . "'>" . $row['tck_email'] . "</a></td>";
-                echo "<td><a href='ticket-edit.php?id=". $row['tck_id'] . ")'><i class='fa fa-pencil' aria-hidden='true'></i></button></td>";
+                echo "<td><a href='ticket-edit.php?id=". $row['tck_id'] . "'><i class='fa fa-pencil' aria-hidden='true'></i></button></td>";
                 echo "<td><button onclick='deleteTicket(". $row['tck_id'] . ")'><i class='fa fa-ban' aria-hidden='true'></i></button></td>";
                 echo "<td>" . $row['tck_status'] . "</td>";
                 echo "<td>" . $row['tck_resolution'] . "</td>";
