@@ -25,3 +25,7 @@ function whereTheStuffHappens(a,b,c,d,o){
     //document.getElementById("result").innerHTML = (cons + ' ± ' + error);
     return(cons + ' ± ' + error);
 }
+
+
+//The following command will run as expected, the problem lies within the html intergration
+//console.log(whereTheStuffHappens(207.9,2.1,107.7,.5,'S'));
