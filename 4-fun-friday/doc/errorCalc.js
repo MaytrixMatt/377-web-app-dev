@@ -1,10 +1,4 @@
 function whereTheStuffHappens(a,b,c,d,o){
-    // var a = parseInt(document.getElementById("a").value);
-    // var b = parseInt(document.getElementById("b").value);
-    // var c = parseInt(document.getElementById("c").value);
-    // var d = parseInt(document.getElementById("d").value);
-    // var o = document.getElementById("o");
-    
     if(o == 'A'){
         var cons = a + c;
     }else if(o == 'S'){
@@ -14,7 +8,7 @@ function whereTheStuffHappens(a,b,c,d,o){
     }else if(o == 'D'){
         var cons = a / c;
     }else{
-        //document.getElementById("result").innerHTML = ("Your operation was incorrectly formated");
+        return("Incorrect Format - Operation should be 'A', 'S', 'M', or 'D'");
     }
 
     if(o == 'A' || o == 'S'){
@@ -27,7 +21,12 @@ function whereTheStuffHappens(a,b,c,d,o){
     //document.getElementById("result").innerHTML = (cons + ' ± ' + error);
     return(cons + ' ± ' + error + p);
 }
+        var p = ''
+        
+    }else{
+        var error = ((Math.sqrt(((b/a*100)*(b/a*100)) + ((d/c*100)*(d/c*100))))/100);
+        var p = ' %'
+    }
 
-
-//The following command will run as expected, the problem lies within the html intergration
-//console.log(whereTheStuffHappens(207.9,2.1,107.7,.5,'S'));
+    return(cons + ' ± ' + error + p);
+}
