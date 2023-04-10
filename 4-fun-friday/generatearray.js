@@ -1,6 +1,6 @@
 var arr = [];
 
-for(var i = 0; i <= 24; i++){
+for(var i = 0; i <= 92; i++){
   arr.push(i);
 }
 

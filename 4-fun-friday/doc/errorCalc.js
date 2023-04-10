@@ -18,12 +18,14 @@ function whereTheStuffHappens(a,b,c,d,o){
     }
 
     if(o == 'A' || o == 'S'){
-        error = Math.sqrt((b*b) + (d*d));
+        var error = Math.sqrt((b*b) + (d*d));
+        var p = '';
     }else{
-        error = ((Math.sqrt(((b/a*100)*(b/a*100)) + ((d/c*100)*(d/c*100))))/100)*cons;
+        var error = ((Math.sqrt(((b/a*100)*(b/a*100)) + ((d/c*100)*(d/c*100))))/100);
+        var p = '%';
     }
     //document.getElementById("result").innerHTML = (cons + ' ± ' + error);
-    return(cons + ' ± ' + error);
+    return(cons + ' ± ' + error + p);
 }
 
 
