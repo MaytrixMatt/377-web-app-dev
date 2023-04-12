@@ -59,7 +59,7 @@ include('library.php');
     {
         echo "<tr>";
         echo "<td>" . $row['app_id'] . "</td>";
-        echo "<td>" . $row['cus_last_name'] . "</td>" . " , " . $row['cus_first_name'] . ;
+        echo "<td>" . $row['cus_last_name'] . "</td>" . " , " . $row['cus_first_name'];
         echo "<td>" . $row['cus_phone'] . "</td>";
         echo "<td><a href='mailto:". $row['tkt_contact_email'] . "'>" . $row['tkt_contact_email'] . "</a></td>";
         echo "<a href='index.php?content=detail&id=" . $row['app_id'] . "' title='Edit this ticket'><i class='fa fa-pencil' aria-hidden='true'></i></a> ";

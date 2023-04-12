@@ -21,12 +21,12 @@ function whereTheStuffHappens(a,b,c,d,o){
     //document.getElementById("result").innerHTML = (cons + ' ± ' + error);
     return(cons + ' ± ' + error + p);
 }
-        var p = ''
+//         var p = ''
         
-    }else{
-        var error = ((Math.sqrt(((b/a*100)*(b/a*100)) + ((d/c*100)*(d/c*100))))/100);
-        var p = ' %'
-    }
+//     }else{
+//         var error = ((Math.sqrt(((b/a*100)*(b/a*100)) + ((d/c*100)*(d/c*100))))/100);
+//         var p = ' %'
+//     }
 
-    return(cons + ' ± ' + error + p);
-}
+//     return(cons + ' ± ' + error + p);
+// }
