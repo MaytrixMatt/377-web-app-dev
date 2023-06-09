@@ -6,8 +6,8 @@
  * Common environment settings and functions used througout the Hanover DPW Park Permitting
  * application.
  *************************************************************************************************/
-extract($_REQUEST);
 error_reporting(0);
+extract($_REQUEST);
 
 /*
  * Returns the content to be included based on the 'content' request parameter, if present.

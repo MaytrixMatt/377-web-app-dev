@@ -11,6 +11,9 @@
  * - date
  * - firstName
  * - lastName
+ * - phone
+ * - email
+ * - parkAreas - this is an array of IDs for park_area records
  *************************************************************************************************/
 
 include('library.php');
@@ -23,10 +26,14 @@ $cusId = $conn->real_escape_string($cusId);
 $date = $conn->real_escape_string($date);
 $firstName = $conn->real_escape_string($firstName);
 $lastName = $conn->real_escape_string($lastName);
-for ($i=0; $i < sizeof($parkAreas); $i++) { 
-    $parkAreas[$i] = $conn->real_escape_string($parkAreas);
+$phone = $conn->real_escape_string($phone);
+$email = $conn->real_escape_string($email);
+for ($i = 0; $i < sizeof($parkAreas); $i++)
+{
+    $parkAreas[$i] =  $conn->real_escape_string($parkAreas[$i]);
 }
 
+// Determine if we need to create a new application or edit an existing application
 if (empty($appId))
 {
     /*
@@ -35,8 +42,8 @@ if (empty($appId))
 
     // Step 1: Create the `customer` record
     $sql = <<<SQL
-    INSERT INTO customers (cus_first_name, cus_last_name)
-        VALUES ('$firstName', '$lastName')
+    INSERT INTO customers (cus_first_name, cus_last_name, cus_phone, cus_email)
+        VALUES ('$firstName', '$lastName', '$phone', '$email')
     SQL;
 
     if (!$conn->query($sql))
@@ -45,10 +52,10 @@ if (empty($appId))
     }
 
     // Step 2: Create the `application` record
-    $appId = $conn->insert_id;
+    $cusId = $conn->insert_id;
     $sql = <<<SQL
     INSERT INTO applications (app_cus_id, app_date)
-        VALUES ($appId, '$date')
+        VALUES ($cusId, '$date')
     SQL;
 
     if (!$conn->query($sql))
@@ -57,7 +64,19 @@ if (empty($appId))
     }
 
     // Step 3: Create the `application_park_areas` records
-    // TODO: Implement this!
+    $appId = $conn->insert_id;
+    foreach ($parkAreas as $pkaId)
+    {
+        $sql = <<<SQL
+        INSERT INTO application_park_areas (apa_app_id, apa_pka_id)
+            VALUES ($appId, $pkaId)
+        SQL;
+
+        if (!$conn->query($sql))
+        {
+            die('Error inserting application_park_area record: ' . $conn->error);
+        }
+    }
 }
 else
 {
@@ -69,7 +88,9 @@ else
     $sql = <<<SQL
     UPDATE customers
        SET cus_first_name = '$firstName',
-           cus_last_name = '$lastName'
+           cus_last_name = '$lastName',
+           cus_phone = '$phone',
+           cus_email = '$email'
      WHERE cus_id = $cusId
     SQL;
 
@@ -90,8 +111,29 @@ else
         die('Error inserting application record: ' . $conn->error);
     }
 
-    // Step 3: Update the `application_park_areas` records
-    // TODO: Implement this!
+    // Step 3: Update the `application_park_areas` records (delete all existing children then insert based on selected parkAreas)
+    $sql = <<<SQL
+    DELETE FROM application_park_areas
+     WHERE apa_app_id = $appId
+    SQL;
+
+    if (!$conn->query($sql))
+    {
+        die('Error deleting application_park_area records: ' . $conn->error);
+    }
+
+    foreach ($parkAreas as $pkaId)
+    {
+        $sql = <<<SQL
+        INSERT INTO application_park_areas (apa_app_id, apa_pka_id)
+            VALUES ($appId, $pkaId)
+        SQL;
+
+        if (!$conn->query($sql))
+        {
+            die('Error inserting application_park_area record: ' . $conn->error);
+        }
+    }
 }
 
 $conn->close();

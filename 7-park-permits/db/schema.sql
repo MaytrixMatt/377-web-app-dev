@@ -15,7 +15,8 @@ CREATE TABLE `applications` (
   `app_people`         int DEFAULT NULL,
   `app_teams`          int DEFAULT NULL,
   `app_registrants`    int DEFAULT NULL,
-  PRIMARY KEY (`app_id`)
+  PRIMARY KEY (`app_id`),
+  INDEX `app_cus_id` (`app_cus_id`)
 );
 
 CREATE TABLE `customers` (
@@ -34,7 +35,8 @@ CREATE TABLE `park_areas` (
   `pka_id`             int NOT NULL AUTO_INCREMENT,
   `pka_name`           varchar(100) NOT NULL,
   `pka_par_id`         int NOT NULL,
-  PRIMARY KEY (`pka_id`)
+  PRIMARY KEY (`pka_id`),
+  INDEX `pka_par_id` (`pka_par_id`)
 );
 
 CREATE TABLE `parks` (
@@ -47,5 +49,7 @@ CREATE TABLE `application_park_areas` (
   `apa_id`             int NOT NULL AUTO_INCREMENT,
   `apa_app_id`         int NOT NULL,
   `apa_pka_id`         int NOT NULL,
-  PRIMARY KEY (`apa_id`)
+  PRIMARY KEY (`apa_id`),
+  INDEX `apa_app_id` (`apa_app_id`),
+  INDEX `apa_pka_id` (`apa_pka_id`)
 );

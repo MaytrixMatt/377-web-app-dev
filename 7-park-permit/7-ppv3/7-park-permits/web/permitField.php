@@ -1,1 +1,0 @@
-This page will display dates available for a given field
