@@ -1,26 +1,16 @@
 var numbers = [];
-function add() {
+function mainfour(o) {
     var value1 = parseInt(document.getElementById("value1").value);
     var value2 = parseInt(document.getElementById("value2").value);
-    var result = value1 + value2;
-    document.getElementById("basicresult").innerHTML = result;
-}
-function subtract() {
-    var value1 = parseInt(document.getElementById("value1").value);
-    var value2 = parseInt(document.getElementById("value2").value);
-    var result = value1 - value2;
-    document.getElementById("basicresult").innerHTML = result;
-}
-function multiply() {
-    var value1 = parseInt(document.getElementById("value1").value);
-    var value2 = parseInt(document.getElementById("value2").value);
-    var result = value1 * value2;
-    document.getElementById("basicresult").innerHTML = result;
-}
-function divide() {
-    var value1 = parseInt(document.getElementById("value1").value);
-    var value2 = parseInt(document.getElementById("value2").value);
-    var result = value1 / value2;
+    if(o == "a"){
+        var result = value1 + value2;
+    }else if(o == "s"){
+        var result = value1 - value2;
+    }else if (o == "m"){
+        var result = value1 * value2;
+    }else{ //must be division
+        var result = value1 / value2;
+    }
     document.getElementById("basicresult").innerHTML = result;
 }
 function square() {
